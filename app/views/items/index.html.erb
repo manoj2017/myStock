@@ -13,9 +13,20 @@
     </div>
   <% end %>
 <% end %>
-<div class="digg_pagination">
-  <div class="page_info">
-    <%= page_entries_info @items %>
+
+
+<div class="row">
+    <div class="digg_pagination" style="width: 60%;margin-left: 1%;">
+    <div class="page_info">
+      <%= page_entries_info @items %>
+    </div>
+  </div>
+  <div>
+    <%= search_form_for(@q,url: items_path, id: 'items_search_form') do |f| %>
+      <%=f.text_field :name_cont, placeholder: 'Name', class: "form-input"%>
+      <%=f.select :state_eq, ['delisted', 'listed'], {:include_blank => 'State'}, class: "form-input"  %>
+      <%= f.submit :Search, class: "form-input btn-blue", style: "background: cornflowerblue;" %>
+    <%end%>
   </div>
 </div>
 

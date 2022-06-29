@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.4'
+gem 'rails', '4.2.8'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 gem 'sqlite3', '~> 1.3.0'
@@ -24,6 +24,7 @@ gem 'turbolinks', '~> 2.5'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'bigdecimal', '1.3.5'
 
 # gem 'rack', '1.6.2'
 
@@ -41,6 +42,8 @@ gem 'will_paginate', '~> 3.3'
 # Use will_paginate-bootstrap for styling pagination
 gem 'will_paginate-bootstrap'
 
+gem 'ransack'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -51,6 +54,6 @@ group :development do
   gem 'web-console', '~> 2.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+ # gem 'spring'
 end
 

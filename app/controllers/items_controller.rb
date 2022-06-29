@@ -1,14 +1,13 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
-  ITEMS_PER_PAGE = 50
+  ITEMS_PER_PAGE = 10
 
   # GET /items
   # GET /items.json
   def index
-    # @all_items = Item.all
-    # @all_items_count = Item.count
-    @items = Item.order("id DESC").paginate(page: params[:page], per_page: ITEMS_PER_PAGE)
+    @q = Item.ransack(params[:q])
+    @items = @q.result.order("id DESC").paginate(page: params[:page], per_page: ITEMS_PER_PAGE)
   end
 
   # GET /items/1

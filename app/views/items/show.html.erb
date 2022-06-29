@@ -1,0 +1,28 @@
+<div class="container">
+  <p id="notice"><%=  %></p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @item.name %>
+  </p>
+
+  <p>
+    <strong>Weight:</strong>
+    <%= @item.weight %>
+  </p>
+
+  <p>
+    <strong>Price:</strong>
+    <%= @item.price %>
+  </p>
+
+  <p>
+    <strong>State:</strong>
+    <%= @item.state %>
+  </p>
+
+  <%= link_to 'Edit', edit_item_path(@item), class: "btn btn-dark" %>
+  <%= link_to 'Back', items_path, class: "btn btn-dark" %>
+  
+</div>
+

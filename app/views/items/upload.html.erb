@@ -1,0 +1,29 @@
+<p id="notice"><%  %></p>
+<% flash.each do |type, msg| %>
+  <% if (type == "notice") %>
+    <div class="alert alert-success">
+      <%= msg %>
+    </div>
+  <% elsif (type == "error") %>
+    <div class="alert alert-danger">
+      <%= msg %>
+    </div>
+  <% else %>     
+    <div class="alert alert-info">
+      <%= msg %>
+    </div>
+  <% end %>
+<% end %>
+<div class="jumbotron">
+  <h1 class="display-4">Import Items</h1>
+  <br>
+  <%= form_tag import_items_path, multipart: true do %>
+    <%= file_field_tag :csv_file, :accept => 'text/csv'%>
+    <%= submit_tag( "Upload Items" ) %>
+  <% end %>
+</div>
+<%= link_to 'Back', upload_path, class: "btn btn-lg btn-outline-dark", align: "right" %>
+<br>
+
+
+
